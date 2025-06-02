@@ -1,0 +1,336 @@
+$main-color: #5aa450;
+$dark-color: #105f1b;
+$point-color: #ffc107;
+$font-color: #222;
+$white-font: #fff;
+
+@mixin flex($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin mobile {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+// body{
+//     font-family: sans-serif;
+// }
+
+// 메뉴바&배너
+header {
+    // margin-top: 1.5rem;
+    #top {
+        margin: 0 1.5rem;
+        @include flex(space-between, center);
+        img {
+            width: 250px;
+            height: 100%;
+            @include mobile {
+                width: 200px;
+                margin: 5px 0;
+            }
+        }
+        .menu-icon {
+            display: none;
+            font-size: 1.5rem;
+            color: $dark-color;
+            cursor: pointer;
+            margin-right: 1rem;
+            @include mobile {
+                display: block;
+            }
+            &:hover + ul{
+                display: flex;
+            }
+        }
+        ul {
+            font-size: 1.2rem;
+            @include flex(flex-end, center);
+            @include mobile {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                width: 30%;
+                height: 25rem;
+                background-color: $point-color;
+                color: $white-font;
+                position: absolute;
+                top: 60px;
+                right: -5px;
+                z-index: 10;
+                padding: 10px 0;
+                border: 1px solid $main-color;
+                border-radius: 20px;
+            }
+            li {
+                padding: 0.3rem 3rem;
+                // border: 1px solid #222;
+                border-radius: 8px;
+                &:hover {
+                    background-color: $point-color;
+                }
+                &:last-child {
+                    margin: 2rem;
+                    font-size: 1.5rem;
+                    @include mobile{
+                        margin: 1rem;
+                    }
+                }
+                @include mobile {
+                    position: relative;
+                    margin: 10px auto;
+                    z-index: 11;
+                }
+            }
+        }
+    }
+    .banner {
+        padding: 18rem 15rem;
+        font-size: 2rem;
+        color: $white-font;
+        background-color: $main-color;
+        position: relative;
+        @include mobile {
+            padding: 8rem 5rem;
+        }
+        img {
+            width: 60%;
+            position: absolute;
+            right: 6%;
+            top: 50%;
+            transform: translateY(-50%);
+            @include mobile {
+                right: 3%;
+            }
+        }
+        div {
+            h1,
+            p,
+            button {
+                position: relative;
+                z-index: 3;
+            }
+            h1,
+            p {
+                text-shadow: 1px 1px 5px $font-color;
+            }
+            p {
+                width: 100%;
+                height: auto;
+                padding: 2rem 0;
+            }
+            button {
+                font-weight: bolder;
+                font-size: 1.5rem;
+                width: 200px;
+                height: 60px;
+                background-color: $point-color;
+                color: #000;
+                border-radius: 10px;
+                box-shadow: 1px 1px 5px $font-color;
+                border: none;
+                &:hover {
+                    background-color: $dark-color;
+                }
+            }
+            @include mobile {
+                h1 {
+                    font-size: 1.9rem;
+                }
+                p {
+                    font-size: 1.2rem;
+                }
+                button {
+                    width: 150px;
+                    height: 40px;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// 구성&설명 박스
+section#function {
+    margin: 3rem 0;
+    ul {
+        width: 50%;
+        margin: 3rem auto;
+        @include flex();
+        gap: 1rem;
+        @include mobile {
+            flex-direction: column;
+            margin: 1rem auto;
+            gap: 0;
+        }
+        li {
+            font-size: 1.1rem;
+            @include flex(space-between, center);
+            @include mobile {
+                font-size: 1rem;
+                width: 75%;
+            }
+            flex: 1;
+            border: 1px solid #b0b0b0;
+            border-radius: 20px;
+            box-shadow: 4px 4px 10px #b0b0b0;
+            padding: 3rem;
+            margin: 1rem;
+            position: relative;
+            img {
+                position: absolute;
+                right: 30px;
+                bottom: 30px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+// 신청하기란
+section#apply {
+    margin-bottom: 3rem;
+    h3 {
+        font-size: 1.5rem;
+        border-top: 2px solid $dark-color;
+        padding-top: 3rem;
+        text-align: center;
+        @include mobile {
+            padding-bottom: 2rem;
+        }
+    }
+    ul {
+        @include flex();
+        text-align: center;
+        @include mobile {
+            flex-direction: column;
+        }
+        li {
+            font-size: 1.2rem;
+            margin: 1.5rem 1.5rem;
+            padding: 0.5rem;
+            border: 1px solid #b0b0b0;
+            border-radius: 20px;
+            box-shadow: 4px 4px 10px #b0b0b0;
+            p {
+                margin-top: 1.5rem;
+            }
+        }
+    }
+    div {
+        @include flex();
+        @include mobile {
+            flex-direction: column;
+        }
+        button {
+            margin: 1.5rem;
+            color: $dark-color;
+            font-size: 2.5rem;
+            font-weight: bold;
+            width: 430px;
+            height: 80px;
+            background-color: $white-font;
+            border: 3px solid $point-color;
+            border-radius: 10px;
+            box-shadow: 2px 2px 30px #ddd;
+            &:hover {
+                background-color: $point-color;
+            }
+            @include mobile {
+                width: 200px;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+// 마지막 광고
+section#adver {
+    background-image: url(../imges/fram.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+    h2 {
+        position: absolute;
+        z-index: 3;
+        color: $white-font;
+        text-shadow: 2px 2px 10px $font-color;
+        font-size: 4rem;
+        padding: 6rem 8rem;
+        @include mobile {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+// 하단 푸터
+footer {
+    background-color: $dark-color;
+    color: $white-font;
+    nav {
+        padding: 1rem 1.5rem;
+        @include flex(space-between, center);
+        @include mobile {
+            flex-direction: column;
+        }
+        img {
+            width: 250px;
+            height: 100%;
+            @include mobile {
+                width: 200px;
+                padding-bottom: 3rem;
+            }
+        }
+        ul {
+            font-size: 1.2rem;
+            @include flex(flex-end, center);
+            @include mobile {
+                flex-direction: column;
+            }
+            li {
+                padding: 0 10px;
+                border-right: 2.5px solid #fff;
+                &:last-child {
+                    border: none;
+                    margin-right: 2rem;
+                    margin-top: none;
+                }
+                @include mobile {
+                    border: none;
+                    padding: 0.5rem;
+                    &:last-child {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    p {
+        padding-top: 10rem;
+        padding-bottom: 2rem;
+        text-align: center;
+        @include mobile {
+            font-size: 0.8rem;
+        }
+    }
+}

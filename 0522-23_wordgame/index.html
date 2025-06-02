@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>끝말잇기</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <main>
+            <section id="home">
+                <h1 id="title">끝말 <br>잇기</h1>
+                <div id="start">
+                    <p id="guide">시작 단어를 입력하면 게임이 시작됩니다</p>
+                    <input
+                        type="text"
+                        id="start-input"
+                        placeholder="시작 단어를 입력하세요"
+                    />
+                    <button id="start-btn">시작하기</button>
+                </div>
+            </section>
+            <section id="chat">
+                <h2>나홀로 끝말잇기</h2>
+                <ul class="chat-box">
+                    <!-- <li class="chat-user">사용자</li>
+                    <li class="chat-bot">자동차</li>
+                    <li class="chat-user">차표</li>
+                    <li class="chat-bot">표현</li>
+                    <li class="chat-user">현실</li>
+                    <li class="chat-bot">실내</li>
+                    <li class="chat-user">내일</li> -->
+                </ul>
+                <div class="input-area">
+                    <input
+                        type="text"
+                        id="user-input"
+                        placeholder="낱말을 입력하세요"
+                    />
+                    <button id="send-btn">
+                        <i class="fa-solid fa-circle-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+        </main>
+        <script src="./script/script.js"></script>
+    </body>
+</html>
