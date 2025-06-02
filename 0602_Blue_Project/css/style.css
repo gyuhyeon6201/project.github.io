@@ -3,7 +3,7 @@
 :root {
     --main-color: #2957e2;
     --sub-color: #eee;
-    --sub-font: 5rem;
+    --sub-font: 3rem;
 }
 
 html {
@@ -27,6 +27,7 @@ body {
     border-radius: 50%;
     background-color: var(--main-color);
     animation: logoFade 3s linear infinite;
+    overflow: hidden;
 }
 #logo > li {
     position: absolute;
@@ -256,9 +257,97 @@ section#about {
     padding: 1rem 3rem;
     transition: 0.5s;
 }
-#about .keyword > li > p.yes:hover{
+#about .keyword > li > p.yes:hover {
     background-color: var(--main-color);
     color: var(--sub-color);
+}
+
+/* projcet */
+.project-wrap{
+    width: 90%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.project-wrap > h2 {
+    text-align: center;
+    padding: 1rem;
+    font-size: var(--sub-font);
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    border-radius: 3rem;
+}
+
+.item-list {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+.item-list > .item {
+    /* width: 33.33333%; */
+    flex: 1;
+}
+.item-list > .item > * {
+    padding: 0.7rem;
+    border: 1px solid var(--main-color);
+    border-top: none;
+    font-size: 1.2rem;
+}
+.item-list > .item > .item-title {
+    border-top: 1px solid var(--main-color);
+    font-size: 1.7rem;
+}
+.item-list > .item > .item-img {
+    width: 100%;
+    aspect-ratio: 1/0.5;
+    background-color: #888;
+}
+.item-detail > li {
+    font-size: 1rem;
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    /* gap: 1rem; */
+    gap: 10px;
+    /* margin: 0.5rem 0; */
+    margin-bottom: 5px;
+}
+.item-detail > li > p {
+    width: 100px;
+    text-align: right;
+    font-weight: 600;
+}
+.item-detail > li > .tool {
+    display: flex;
+    /* gap: 5px; */
+    gap: 3px;
+}
+.item-detail > li > .tool > p {
+    border: 1px solid var(--main-color);
+    /* padding: 5px; */
+    padding: 3px 5px;
+    /* border-radius: 15px; */
+    border-radius: 2rem;
+}
+.item-list > .item > .btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.item-list > .item > .btn > p {
+    flex: 1;
+    background-color: var(--main-color);
+    color: var(--sub-color);
+    font-weight: bolder;
+    /* padding: 10px 3rem; */
+    padding: 5px 0;
+    /* border-radius: 5px; */
+    border-radius: 7px;
+    text-align: center;
 }
 
 

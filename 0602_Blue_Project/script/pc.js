@@ -60,23 +60,47 @@ $aboutMsg.forEach((msg) => {
             trigger: msg,
             containerAnimation: horizonScroll, // 가로 스크롤일 경우 필수 항목
             start: "left 90%",
-            toggleActions: "play reverse play reverse"
+            toggleActions: "play reverse play reverse",
         },
     });
 });
 
-
 // keyword 부분이 가로로 왔다갔다 실행
 const $keywordList = document.querySelectorAll(".keyword>li");
-$keywordList.forEach((elem,idx)=>{
-    const posX = (idx===1)? 50:-50;
-    gsap.fromTo(elem,{
-        x: posX,
-    },{
-        x: -posX,
-        duration:1,
-        repeat:-1,
-        yoyo: true,
-        ease: "none"
+$keywordList.forEach((elem, idx) => {
+    const posX = idx === 1 ? 50 : -50;
+    gsap.fromTo(
+        elem,
+        {
+            x: posX,
+        },
+        {
+            x: -posX,
+            duration: 1,
+            repeat: -1,
+            yoyo: true,
+            ease: "none",
+        }
+    );
+});
+
+// project 안에 card item을 계단 형식으로 애니처리 됨
+const $project = document.querySelectorAll("#projects>.nomal");
+$project.forEach((article) => {
+    const $item = article.querySelectorAll(".item");
+    $item.forEach((item, idx) => {
+        let posY = 90 - idx * 15;
+        gsap.from(item, {
+            y: 200,
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: item,
+                start: `top ${posY}%`,
+                end: "top 25%",
+                scrub: true,
+                markers: true
+            },
+        });
     });
 });
