@@ -1,5 +1,237 @@
 @charset "utf-8";
 
-body{
-    background-color: darkcyan;
+:root {
+    --main-color: #2957e2;
+    --sub-color: #eee;
+    --sub-font: 3rem;
 }
+
+html{
+    /* font-size는 10px 고정 */
+    font-size: 62.5%;
+}
+body{
+    background-color: var(--main-color);
+    color: var(--sub-color);
+    overflow-x: hidden;
+}
+#logo{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--sub-color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    color: var(--main-color);
+    font-size: 2rem;
+    text-align: center;
+    line-height: 80px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    animation: logoFade 3s linear infinite;
+    z-index: 10;
+    overflow: hidden;
+}
+#logo > li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 80px;
+    cursor: pointer;
+    color: var(--main-color);
+    transition: top 0.5s;
+}
+#logo > li:nth-child(1) {
+    top: 0;
+}
+#logo > li:nth-child(2) {
+    top: 100%;
+}
+#logo:hover > li:nth-child(1) {
+    top: 100%;
+}
+#logo:hover > li:nth-child(2) {
+    top: 0;
+}
+@keyframes logoFade {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* header 영역 */
+header{
+    margin-top: 150px;
+    height: 100vh;
+    position: relative;
+    font-size: 4rem;
+}
+nav{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+ul.gnb{
+    font-size: 3rem;
+}
+ul.gnb>li{
+    position: relative;
+}
+ul.gnb > li::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    width: 0;
+    height: 100%;
+    background-color: var(--sub-color);
+    z-index: -1;
+    transition: 0.5s;
+}
+ul.gnb > li:hover::before {
+    width: 100%;
+}
+ul.gnb > li > a {
+    transition: 0.5s;
+    transform-origin: left center;
+}
+ul.gnb > li:hover > a {
+    transform: scale(1.3);
+    color: var(--main-color);
+}
+.title{
+    font-size: 2rem;
+    align-self: flex-end;
+}
+.title>li{
+    margin: 2rem 0;
+}
+.arrow-wrap{
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+}
+.arrow-wrap>div{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.arrow-wrap > .arrow-box{
+    width: 100%;
+    height: 100%;
+    background-color: var(--sub-color);
+    border-radius: 10px;
+    transform: rotate(30deg);
+    animation: rotateBox 10s linear infinite;
+}
+@keyframes rotateBox {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.arrow-wrap >.arrow{
+    color: var(--main-color);
+    left: 50%;
+    transform: translateX(-50%);
+}
+h1{
+    position: absolute;
+    bottom: 14rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14vw;
+}
+h1::before{
+    content: 'PORTFOLIO';
+    font-size: 10rem;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--sub-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.4;
+}
+
+/* 공통 */
+section{
+    width: 90%;
+    margin: 10rem auto;
+}
+/* about */
+section#about{
+    margin-top: 10rem;
+    font-size: 1.5rem;
+}
+#about .info{
+    z-index: -2;
+    background-color: var(--sub-color);
+    color: var(--main-color);
+    padding: 2rem 4rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+#about .info h2{
+    font-size: var(--sub-font);
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    color: var(--sub-color);
+    -webkit-text-stroke: 1px var(--main-color);
+}
+#about .info h2::before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    aspect-ratio: 1/0.7;
+    transform: translate(-50%,-50%) rotate(30deg);
+    background-color: var(--main-color);
+    border-radius: 20px;
+}
+#about .info p {
+    margin-top: 25%;
+    text-align: right;
+}
+
+#about .word{
+    margin: 5rem 0;
+}
+#about .keyword{}
+#about .word h2{
+    font-size: var(--sub-font);
+}
+#about .word h2.bottom{
+    text-align: right;
+}
+#about .keyword>li{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 2rem 0;
+}
+#about .keyword>li > p{
+    /* font-size: 3rem; */
+    font-size: 4vw;
+    font-weight: bolder;
+    padding: 1rem 2rem;
+    border: 1px solid var(--sub-color);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4rem;
+}
+
