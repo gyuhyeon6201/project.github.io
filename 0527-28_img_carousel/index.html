@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>이미지 캐러셀</title>
+    </head>
+    <body>
+        <header>
+            <h1>저를 소개합니다.</h1>
+            <nav>
+                <button data-index="1" class="active">About Me</button>
+                <button data-index="2">Favorites</button>
+                <button data-index="3">MBTI</button>
+                <button data-index="4">Dream</button>
+            </nav>
+        </header>
+        <main>
+            <div class="btn">
+                <button class="prev">◀</button>
+                <button class="next">▶</button>
+            </div>
+            <div class="section-cover">
+                <section class="card about-me">
+                    <h2>About Me</h2>
+                    <div class="about-content">
+                        <img src="./images/main_character.png" alt="캐릭터" />
+                        <p>
+                            안녕하세요. <br />황규현입니다. <br />저는
+                            어떤사람일까요? <br />맞춰보세요 :3
+                        </p>
+                    </div>
+                    <!-- <div class="about-extra">
+                        <h3>2025년 목표</h3>
+                        <p>꾸준한 운동과 자기개발로 한층 더 성장하기</p>
+                    </div> -->
+                </section>
+                <section class="card favorites">
+                    <h2>Favorites</h2>
+                    <ul>
+                        <li>
+                            <p>Color</p>
+                            <img src="./images/color.png" alt="보라색 체크" />
+                        </li>
+                        <li>
+                            <p>Food</p>
+                            <img src="./images/food.png" alt="양배추 떡볶이" />
+                        </li>
+                        <li>
+                            <p>Book</p>
+                            <img src="./images/Book.png" alt="왕은 웃었다" />
+                        </li>
+                        <li>
+                            <p>TV</p>
+                            <img
+                                src="./images/animation.png"
+                                alt="귀멸의 칼날"
+                            />
+                        </li>
+                    </ul>
+                </section>
+                <section class="card mbti">
+                    <h2>MBTI</h2>
+                    <img src="./images/MBTI_txt.png" alt="INFP+이미지" />
+                    <ul>
+                        <li>#집순이</li>
+                        <li>#노는건 좋지만 기빨려</li>
+                        <li>#포토샵&웹디자인 입문자</li>
+                        <li>#기계전공</li>
+                        <li>#운동시작</li>
+                        <li>#요즘은 괴담출근</li>
+                    </ul>
+                </section>
+                <section class="card dream">
+                    <h2>Dream</h2>
+                    <p>Coming Soon!</p>
+                </section>
+            </div>
+        </main>
+        <script src="./script/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+:root {
+    --backgroud-color: #ffffff;
+    --main-color: #c2d5f0;
+    --nav-dark-color: #12233b;
+    --font-color-border: #222222;
+    --infp-color: #1d6819;
+    --purple-color: #4f1752;
+    --orange-color: #eb7d69;
+}
+
+@font-face {
+    font-family: "Ownglyph_corncorn-Rg";
+    src: url(../fonts/Ownglyph_corncorn-Rg.woff2)
+        format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "Ownglyph_corncorn-Rg", sans-serif;
+}
+
+/* header 영역 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+h1 {
+    margin: 1.5rem;
+    padding-left: 5rem;
+    color: var(--main-color);
+    text-shadow: 0 0 5px #222;
+    font-size: 8rem;
+}
+nav {
+    margin: 0 1rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 15px;
+}
+nav > button {
+    padding: 10px;
+    background-color: var(--main-color);
+    font-size: 1rem;
+    font-weight: bolder;
+    border: 3px solid #222;
+    cursor: pointer;
+}
+.active {
+    background-color: var(--nav-dark-color);
+    color: var(--main-color);
+}
+
+/* main 영역 */
+main {
+    height: 75vh;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    border: 3px solid #222;
+    position: relative;
+    overflow: hidden;
+}
+/* button */
+main > .btn {
+    display: flex;
+    justify-content: space-between;
+}
+.prev,
+.next {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    font-size: 2rem;
+    background-color: #fff;
+    /* border: 2px solid #222; */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.prev {
+    position: absolute;
+    left: 29%;
+}
+.next {
+    position: absolute;
+    right: 29%;
+}
+
+/* section */
+section {
+    height: 600px;
+    width: 700px;
+    background-color: #fff;
+    /* border: 2px solid #222; */
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.section-cover {
+    width: 4500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* section - card */
+.card {
+    margin: 50px;
+}
+.card > h2 {
+    font-size: 3rem;
+    margin: 1rem 0;
+    border-bottom: 3px solid var(--main-color);
+}
+
+/* 메뉴바(active) 선택시 또는 버튼 선택시 선택한 창이 정중앙이 되게끔 */
+.section-cover{
+    position: absolute;
+    left: 30%;
+}
+
+/* section 1 - card about-me */
+.about-me>.about-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 4rem 0;
+}
+.about-content > img {
+    border-radius: 50%;
+    border: 1px solid #222;
+    margin-top: 2rem;
+}
+.about-content >  p {
+    font-size: 2rem;
+}
+/* .about-me > .about-extra{
+    margin-top: 3rem;
+}
+.about-extra>p{
+    font-size: 1.5rem;
+} */
+
+/* section 2 - card favorites */
+.favorites > ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin: 30px 50px;
+}
+.favorites li{
+    margin: 10px;
+}
+.favorites p{
+    font-size: 2rem;
+}
+.favorites img{
+    border-radius: 20px;
+    border: 1px solid #222;
+}
+
+/* section 3 - card mbti */
+img{
+    margin: 10px;
+}
+.mbti li{
+    font-size: 2rem;
+}
+
+/* section 3 - card dream */
+.dream > p{
+    text-align: center;
+    line-height: 450px;
+    font-size: 4rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
