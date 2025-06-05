@@ -6,16 +6,19 @@
     --sub-font: 3rem;
 }
 
-html{
+html {
     /* font-size는 10px 고정 */
     font-size: 62.5%;
+    /* 1440 -> 10px */
+    /* font-size: 0.98vw; */
 }
-body{
+body {
+    /* font-size: clamp(1rem,1vw,1.8rem); */
     background-color: var(--main-color);
     color: var(--sub-color);
     overflow-x: hidden;
 }
-#logo{
+#logo {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -65,26 +68,27 @@ body{
 }
 
 /* header 영역 */
-header{
-    margin-top: 150px;
+header {
+    /* padding-top: 20%; */
+    padding-top: 100px;
     height: 100vh;
     position: relative;
     font-size: 4rem;
 }
-nav{
-    padding: 2rem;
+nav {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-ul.gnb{
+ul.gnb {
     font-size: 3rem;
 }
-ul.gnb>li{
+ul.gnb > li {
     position: relative;
 }
-ul.gnb > li::before{
-    content: '';
+ul.gnb > li::before {
+    content: "";
     position: absolute;
     top: 0;
     left: -1rem;
@@ -105,27 +109,28 @@ ul.gnb > li:hover > a {
     transform: scale(1.3);
     color: var(--main-color);
 }
-.title{
+.title {
     font-size: 2rem;
     align-self: flex-end;
 }
-.title>li{
+.title > li {
     margin: 2rem 0;
 }
-.arrow-wrap{
+.arrow-wrap {
     position: absolute;
     bottom: 30%;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 15%;
+    /* transform: translateX(-50%); */
     width: 100px;
-    height: 100px;
+    height: 80px;
+    opacity: 0.7;
 }
-.arrow-wrap>div{
+.arrow-wrap > div {
     position: absolute;
     top: 0;
     left: 0;
 }
-.arrow-wrap > .arrow-box{
+.arrow-wrap > .arrow-box {
     width: 100%;
     height: 100%;
     background-color: var(--sub-color);
@@ -141,41 +146,43 @@ ul.gnb > li:hover > a {
         transform: rotate(360deg);
     }
 }
-.arrow-wrap >.arrow{
+.arrow-wrap > .arrow {
     color: var(--main-color);
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
 }
-h1{
+h1 {
     position: absolute;
     bottom: 14rem;
     left: 50%;
     transform: translateX(-50%);
     font-size: 14vw;
 }
-h1::before{
-    content: 'PORTFOLIO';
+h1::before {
+    content: "PORTFOLIO";
     font-size: 10rem;
     color: transparent;
     -webkit-text-stroke: 1px var(--sub-color);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     opacity: 0.4;
 }
 
 /* 공통 */
-section{
+section {
     width: 90%;
     margin: 10rem auto;
 }
 /* about */
-section#about{
+section#about {
     margin-top: 10rem;
     font-size: 1.5rem;
 }
-#about .info{
+#about .info {
     z-index: -2;
     background-color: var(--sub-color);
     color: var(--main-color);
@@ -184,7 +191,7 @@ section#about{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     position: relative;
 }
-#about .info h2{
+#about .info h2 {
     font-size: var(--sub-font);
     position: absolute;
     top: 15%;
@@ -192,40 +199,42 @@ section#about{
     color: var(--sub-color);
     -webkit-text-stroke: 1px var(--main-color);
 }
-#about .info h2::before{
-    content: '';
+#about .info h2::before {
+    content: "";
     z-index: -1;
     position: absolute;
     top: 50%;
     left: 50%;
     width: 40%;
     aspect-ratio: 1/0.7;
-    transform: translate(-50%,-50%) rotate(30deg);
+    transform: translate(-50%, -50%) rotate(30deg);
     background-color: var(--main-color);
     border-radius: 20px;
 }
 #about .info p {
     margin-top: 25%;
     text-align: right;
+    word-break: keep-all;
 }
 
-#about .word{
+#about .word {
     margin: 5rem 0;
 }
-#about .keyword{}
-#about .word h2{
+#about .word h2 {
     font-size: var(--sub-font);
 }
-#about .word h2.bottom{
+#about .word h2.bottom {
     text-align: right;
 }
-#about .keyword>li{
+/* #about .keyword {} */
+#about .keyword > li {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     margin: 2rem 0;
 }
-#about .keyword>li > p{
+#about .keyword > li > p {
     /* font-size: 3rem; */
     font-size: 4vw;
     font-weight: bolder;
@@ -233,5 +242,194 @@ section#about{
     border: 1px solid var(--sub-color);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     border-radius: 4rem;
+    word-break: keep-all;
+    text-align: center;
 }
 
+/* project */
+#projects > .project-wrap {
+    margin-bottom: 5rem;
+}
+#projects > .project-wrap > h2 {
+    border: 1px solid var(--sub-color);
+    font-size: var(--sub-font);
+    border-radius: 3rem;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+}
+.item-list {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.item-list > li > * {
+    border: 1px solid var(--sub-color);
+    border-top: none;
+    padding: 5px 5px;
+}
+.item-list > .item > .item-title {
+    border-top: 1px solid var(--sub-color);
+    background-color: var(--sub-color);
+    color: var(--main-color);
+}
+.item-list > .item > .item-img {
+    width: 100%;
+    aspect-ratio: 1/0.5;
+    background-color: #888;
+}
+.item-detail {
+    background-color: var(--sub-color);
+    color: var(--main-color);
+}
+.item-detail > li {
+    display: flex;
+    gap: 1rem;
+    margin: 10px;
+}
+.item-detail > li > p {
+    width: 100px;
+    text-align: right;
+    font-weight: 600;
+}
+.item-detail > li > .tool {
+    display: flex;
+    gap: 5px;
+}
+.item-detail > li > .tool > p {
+    background-color: var(--main-color);
+    color: var(--sub-color);
+    padding: 3px 5px;
+    border-radius: 2rem;
+}
+.item-list > .item {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.item-list > li > .btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* practice 레이아웃 변경 */
+#projects > .practice > .item-list {
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.practice .item {
+    width: 48%;
+}
+.practice .item-detail > li > p {
+    /* width: auto; */
+    display: none;
+}
+
+/* skills */
+#skills > h2 {
+    border: 1px solid var(--sub-color);
+    font-size: var(--sub-font);
+    border-radius: 3rem;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+}
+#skills > .skill-item {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+#skills > .skill-item > li {
+    /* background-color: var(--sub-color); */
+    /* color: var(--main-color); */
+    padding: 1rem 2rem;
+    border-radius: 4rem;
+    font-size: 2.3rem;
+    font-weight: bolder;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.shape1,
+.shape5,
+.shape9 {
+    background-color: #b685a3;
+}
+.shape2,
+.shape6,
+.shape10 {
+    background-color: #757308;
+    color: #eee;
+}
+.shape3,
+.shape7,
+.shape11 {
+    background-color: #72a124;
+}
+.shape4,
+.shape8,
+.shape12 {
+    background-color: #7c3a51;
+    color: #eee;
+}
+.shape13 {
+    background-color: #9bbdb4;
+}
+
+/* footer */
+footer {
+    background-color: var(--sub-color);
+    color: var(--main-color);
+    font-size: 3rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3rem;
+    margin: 1rem;
+}
+footer .footer-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+footer .footer-wrap > h2 {
+    font-size: 6rem;
+}
+
+footer .footer-wrap > p {
+    padding: 0 1rem;
+    font-size: 1.5rem;
+}
+footer .links > li {
+    background-color: var(--main-color);
+    color: var(--sub-color);
+    padding: 1rem 10px;
+    border: 1px solid var(--main-color);
+    border-radius: 4rem;
+    margin: 1rem 0;
+}
+
+/* footer .links>li:nth-child(1){
+    border: 1px solid var(--main-color);
+    background-color: var(--sub-color);
+    color: var(--main-color);
+    padding: 1rem;
+    border-radius: 4rem;
+    margin: 1rem 0;
+}
+footer .links>li:nth-child(2){
+    border: 1px solid var(--sub-color);
+    background-color: var(--main-color);
+    color: var(--sub-color);
+    padding: 1rem;
+    border-radius: 4rem;
+    margin: 1rem 0;
+} */
