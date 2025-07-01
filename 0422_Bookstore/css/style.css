@@ -77,6 +77,7 @@ section#book{
 .book-img > .page > .front{
     background-image: url(../img/front.jfif);
     background-size: contain;
+    transform: translateZ(8px);
 }
 .book-img > .page > .back{
     background-image: url(../img/back.jfif);
